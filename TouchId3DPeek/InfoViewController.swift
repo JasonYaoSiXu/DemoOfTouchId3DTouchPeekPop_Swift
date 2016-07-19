@@ -8,6 +8,7 @@
 
 import UIKit
 
+//登录成功后显示的内容
 class InfoViewController: UIViewController {
 
     let tableView = UITableView()
@@ -37,7 +38,7 @@ class InfoViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         view.addSubview(tableView)
-        //Pop Peek
+        //Pop Peek 实现Pop Peek必须实现的代理
         registerForPreviewingWithDelegate(self, sourceView: view)
     }
     

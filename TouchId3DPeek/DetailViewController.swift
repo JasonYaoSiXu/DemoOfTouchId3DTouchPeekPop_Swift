@@ -62,7 +62,7 @@ class DetailViewController: UIViewController {
         })
         
         let itemShareThree = UIPreviewAction(title: "取消", style: .Destructive, handler: { _ in
-            
+            print("Do nothing")
         })
         
         return [itemShare,itemShareTwo,itemShareThree]

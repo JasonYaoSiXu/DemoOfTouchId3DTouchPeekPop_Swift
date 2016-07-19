@@ -19,8 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    //3D Touch
+    //3D Touch 处理事件
     func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
+        
         switch shortcutItem.localizedTitle {
         case "1title" :
             UIApplication.sharedApplication().keyWindow?.rootViewController?.navigationController?.pushViewController(InfoViewController(), animated: true)
@@ -29,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         default:
             print("Nothing to do")
         }
+        
     }
     
     func applicationWillResignActive(application: UIApplication) {

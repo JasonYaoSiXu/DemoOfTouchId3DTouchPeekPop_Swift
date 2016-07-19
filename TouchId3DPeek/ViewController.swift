@@ -21,10 +21,13 @@ class ViewController: UIViewController {
         view.backgroundColor = UIColor.whiteColor()
         title = "TouchDemo"
         
-        //3D Touch
+        //3D Touch 一个应用最多支持4个标签
         let itemOne = UIApplicationShortcutItem(type: "111", localizedTitle: "1title")
         let itemTwo = UIApplicationShortcutItem(type: "222", localizedTitle: "2title")
-        UIApplication.sharedApplication().shortcutItems = [itemOne,itemTwo]
+        let itemThree = UIApplicationShortcutItem(type: "333", localizedTitle: "3title")
+        let itemFour = UIApplicationShortcutItem(type: "444", localizedTitle: "4title")
+        let itemFive = UIApplicationShortcutItem(type: "555", localizedTitle: "5title")
+        UIApplication.sharedApplication().shortcutItems = [itemOne,itemTwo,itemThree,itemFour,itemFive]
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -57,8 +60,12 @@ class ViewController: UIViewController {
     func touchId() {
         let errorPointer = NSErrorPointer()
         
+        //输入指纹错误后会有一个提示框，设置右下角按钮的title
         laCon.localizedFallbackTitle = "输入密码"
+        
+        //首先判断设备是不是支持touch id
         if laCon.canEvaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, error: errorPointer) {
+            //根据输入的指纹进行下面的操作
             laCon.evaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, localizedReason: "指纹登录", reply: { [unowned self] in
                 if $0.0 {
                     print("touch id is right")

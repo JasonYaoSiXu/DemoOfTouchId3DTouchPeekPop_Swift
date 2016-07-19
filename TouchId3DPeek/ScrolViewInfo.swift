@@ -8,6 +8,7 @@
 
 import UIKit
 
+// 因为这里每个tableViewCell显示的内容相同，所以用ScrolViewInfo封装cell显示的内容
 class ScrolViewInfo : NSObject {
     
     let titleImage : UIImage?
